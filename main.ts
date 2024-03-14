@@ -63,7 +63,6 @@ function splitHangul(hanguls: string): string[][] {
     for (let i = 0; i < hanguls.length; i++) {
         const hangul = hanguls[i];
 
-        // 한글이 아닌 경우
         if (!isHangul(hangul)) {
             if (temp.length !== 0) {
                 splitList.push([...temp]);
@@ -73,30 +72,25 @@ function splitHangul(hanguls: string): string[][] {
             continue;
         }
 
-        // 마지막 문자인 경우
         if (i === hanguls.length - 1) {
             temp.push(hangul);
             splitList.push([...temp]);
             continue;
         }
 
-        // 현재까지 임시 배열에 저장된 한글 자모가 2개 이하인 경우
         if (temp.length <= 1) {
             temp.push(hangul);
             continue;
         }
 
-        // 현재 글자와 다음 글자가 모두 중성이 아닌 경우 (종성이 있는 경우)
         if (!isMiddle(hangul) && !isMiddle(hanguls[i + 1])) {
             temp.push(hangul);
             splitList.push([...temp]);
             temp = [];
         } else if (!isMiddle(hangul)) {
-            // 현재 글자가 중성이 아니면 현재까지의 배열을 결과에 추가하고, 현재 글자로 새 배열을 시작
             splitList.push([...temp]);
             temp = [hangul];
         } else {
-            // 그 외의 경우 현재 글자를 임시 배열에 추가
             temp.push(hangul);
         }
     }
@@ -109,12 +103,10 @@ function concateHangul(hangul: string[]): string {
         return hangul.join("");
     }
 
-    // 종성이 없는 경우
     if (hangul.length === 2) {
         return String.fromCharCode((start.indexOf(hangul[0]) * 588) + (middle.indexOf(hangul[1]) * 28) + 44032);
     }
 
-    // 종성이 있는 경우
     if (hangul.length === 3) {
         return concateHangulBadchim(hangul);
     }
@@ -135,12 +127,10 @@ function onlyHangul(hangul: string[]): boolean {
 }
 
 function isHangul(c: string): boolean {
-    // 초성, 중성, 종성 리스트에 문자 c가 포함되어 있는지 확인합니다.
     return start.includes(c) || middle.includes(c) || end.includes(c);
 }
 
 function isMiddle(hangul: string): boolean {
-    // 중성 리스트에 문자 hangul이 포함되어 있는지 확인합니다.
     return middle.includes(hangul);
 }
 
