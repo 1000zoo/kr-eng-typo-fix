@@ -1,11 +1,11 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "kr-eng-typo-fixer",
+	"name": "Korean English Typo Fixer",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
+	"description": "영타로 작성된 문장을 한글로 바꿔주는 플러그인입니다!",
+	"author": "1000zoo",
+	"authorUrl": "https://github.com/1000zoo/kr-eng-typo-fix",
 	"fundingUrl": "https://obsidian.md/pricing",
 	"isDesktopOnly": false
 }
