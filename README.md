@@ -1,4 +1,6 @@
 # KorEngTypoFixer
+![KrEngTypoFixer Result](https://github.com/1000zoo/kr-eng-typo-fix/assets/8938679/8bb9599d-ec69-429d-b9c4-ca760f941fdb)
+
 
 ### 기능
 영어와 혼합하여 문서를 작성하다보면, 한글을 영타로 작성할 때가 많습니다. 영타인 것을 빠르게 발견한다면 다행이지만, 다른 문서를 보며 작성하는 경우에는 몇 줄이 영타로 작성되어있곤 하죠.
