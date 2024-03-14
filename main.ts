@@ -7,19 +7,23 @@ export default class KrEngTypoFixer extends Plugin {
 		this.addCommand({
 			id: "fix-to-korean",
 			name: "Fix to Korean",
-			editorCallback: (editor: Editor) => {
-				const selected = editor.getSelection()
-				if (!selected) return; // 드레그 된 부분이 없다면 끝
-				const fixed = fixTypo(selected);
-				editor.replaceSelection(fixed)
-
-				console.log(selected)
-				console.log(fixed)
-			}
+			editorCallback: (editor: Editor) => fixKrEngTypo(editor)
 		})
+
 	}
 }
 
+function fixKrEngTypo(editor: Editor) {
+	try {
+		const selected = editor.getSelection()
+		if (!selected) return; // 드레그 된 부분이 없다면 끝
+		const fixed = fixTypo(selected);
+		editor.replaceSelection(fixed)
+		new Notice("변경되었습니다.")
+	} catch (error) {
+		new Notice("죄송해요. 에러가 발생했어요!")
+	}
+}
 
 
 const start = ["ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ", "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ"];
