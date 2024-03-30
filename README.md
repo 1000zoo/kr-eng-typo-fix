@@ -7,7 +7,7 @@
 이럴때 편하게 한글로 변환하기 위해 해당 플러그인을 개발하였습니다. 이 플러그인은 영어 타자로 입력된 텍스트를 한글로 변환해주는 기능을 제공합니다.
 
 ### 사용 방법
-1. Release 에서 kr-eng-typo-fix.zip을 `{Obsidian Vault 경로}/.obsidian/plugins/` 에 다운받아, 압축을 해제합니다.
+1. Release 에서 kr-eng-typo-fix.zip(main.js, mainfest.json)을 `{Obsidian Vault 경로}/.obsidian/plugins/` 에 다운받아, 압축을 해제합니다.
   -  plugins 폴더가 없을 경우 생성하시면 됩니다.
 
 2. 옵시디언에서 설정 > 커뮤니티 플러그인 > 설치된 플러그인 > Korean English Typo Fixer 를 활성화 해줍니다.
